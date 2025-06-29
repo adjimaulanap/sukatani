@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesanan Saya - Suka Tani</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body.body-dashboard {
+            background: url('../img/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .navbar-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="body-dashboard">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
+        <div class="container">
+            <!-- Logo & Brand -->
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="dashboard.html">
+                <img src="../img/logo.png" alt="Logo" class="navbar-logo">
+                <i class="bi bi-leaf-fill me-2"></i>
+                Suka Tani
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="keranjang.html">Keranjang</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="pesanan_saya.html">Pesanan Saya</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle fs-5 me-1"></i><span class="d-none d-sm-inline">Halo, Admin</span></a>
+                        <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser">
+                            <li><a class="dropdown-item" href="#">Profil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html" id="logoutButton">Keluar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3 mb-0">Riwayat Pesanan Saya</h1>
+        </div>
+
+        <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link order-filter-btn active" data-filter="semua">Semua</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link order-filter-btn" data-filter="diproses">Diproses</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link order-filter-btn" data-filter="dikirim">Dikirim</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link order-filter-btn" data-filter="selesai">Selesai</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link order-filter-btn" data-filter="dibatalkan">Dibatalkan</button>
+            </li>
+        </ul>
+
+        <div id="order-list">
+            <div class="card order-card mb-3" data-status="selesai">
+                <div class="card-header d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <p class="fw-bold mb-0">ID Pesanan: #ST-20250629-001</p>
+                        <p class="text-muted small mb-0">Tanggal: 29 Juni 2025</p>
+                    </div>
+                    <span class="badge rounded-pill text-bg-success mt-2 mt-md-0">Selesai</span>
+                </div>
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1 text-muted">Total Belanja</p>
+                        <p class="h5 fw-bold mb-0">Rp 110.000</p>
+                    </div>
+                    <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#detail-1">
+                        Lihat Detail
+                    </button>
+                </div>
+                <div class="collapse" id="detail-1">
+                    <div class="card-footer">
+                        <p class="fw-bold small">Detail Produk:</p>
+                        <div class="d-flex align-items-center mb-2"><img src="https://placehold.co/80x80/28a745/white?text=Pupuk" class="rounded me-3" alt="produk"><div class="flex-grow-1"><p class="mb-0">Pupuk NPK Mutiara</p><span class="small text-muted">Qty: 2</span></div><p class="mb-0">Rp 50.000</p></div>
+                        <div class="d-flex align-items-center"><img src="https://placehold.co/80x80/17a2b8/white?text=Sprayer" class="rounded me-3" alt="produk"><div class="flex-grow-1"><p class="mb-0">Sprayer 2 Liter</p><span class="small text-muted">Qty: 1</span></div><p class="mb-0">Rp 45.000</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card order-card mb-3" data-status="dikirim">
+                <div class="card-header d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <p class="fw-bold mb-0">ID Pesanan: #ST-20250628-005</p>
+                        <p class="text-muted small mb-0">Tanggal: 28 Juni 2025</p>
+                    </div>
+                    <span class="badge rounded-pill text-bg-info mt-2 mt-md-0">Dikirim</span>
+                </div>
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div><p class="mb-1 text-muted">Total Belanja</p><p class="h5 fw-bold mb-0">Rp 60.000</p></div>
+                    <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#detail-2">Lihat Detail</button>
+                </div>
+                <div class="collapse" id="detail-2"><div class="card-footer"></div></div>
+            </div>
+
+            <div class="card order-card mb-3" data-status="diproses">
+                <div class="card-header d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <p class="fw-bold mb-0">ID Pesanan: #ST-20250627-002</p>
+                        <p class="text-muted small mb-0">Tanggal: 27 Juni 2025</p>
+                    </div>
+                    <span class="badge rounded-pill text-bg-warning mt-2 mt-md-0">Diproses</span>
+                </div>
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div><p class="mb-1 text-muted">Total Belanja</p><p class="h5 fw-bold mb-0">Rp 75.000</p></div>
+                    <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#detail-3">Lihat Detail</button>
+                </div>
+                <div class="collapse" id="detail-3"><div class="card-footer"></div></div>
+            </div>
+        </div>
+        
+        <div id="no-orders-message" class="text-center py-5" style="display: none;">
+            <i class="bi bi-file-earmark-text-fill" style="font-size: 5rem; color: #ccc;"></i>
+            <h4 class="mt-3">Anda belum memiliki pesanan</h4>
+            <p class="text-muted">Semua pesanan yang Anda buat akan muncul di halaman ini.</p>
+            <a href="dashboard.html" class="btn btn-success mt-2">Belanja Sekarang</a>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Suka Tani. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/pesanan_saya.js"></script>
+</body>
+</html>
