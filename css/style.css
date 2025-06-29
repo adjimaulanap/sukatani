@@ -1,0 +1,293 @@
+/*
+  File: style.css
+  Website: Suka Tani
+  Deskripsi: Stylesheet tunggal untuk semua halaman (Login, Register, Dashboard).
+*/
+
+/* Mengimpor font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- 1. VARIABEL GLOBAL & STYLE DASAR --- */
+:root {
+    --primary-green: #28a745; /* Warna hijau utama */
+    --dark-green: #218838;    /* Warna hijau lebih gelap untuk hover */
+    --light-gray: #f8f9fa;    /* Warna abu-abu terang */
+    --font-family: 'Poppins', sans-serif; /* Font utama untuk seluruh website */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: white; /* Warna dasar body, akan ditimpa jika perlu */
+}
+
+.navbar-logo {
+    height: 30px;       /* Sesuaikan tinggi logo, 32-36px biasanya pas di navbar */
+    width: auto;        /* Biar proporsional */
+    object-fit: contain;
+    display: inline-block;
+}
+
+@media (max-width: 991.98px) {
+    /* Responsive: logo sedikit lebih kecil di layar kecil */
+    .navbar-logo {
+        height: 28px;
+    }
+}
+
+.navbar-brand {
+    /* Agar tidak terlalu tepi kiri */
+    padding-left: 0;
+}
+
+
+/* Tambahkan jarak bawah search bar */
+.d-flex[role="search"] {
+    position: relative;
+    margin-bottom: 1rem; /* bisa diganti 2rem/3rem sesuai selera */
+}
+
+
+/* Search bar with modern rounded look & strong shadow */
+.form-control[type="search"] {
+    border-radius: 2rem;
+    border: 1.5px solid #e0e0e0;
+    padding: 0.5rem 2.5rem 0.5rem 3rem; /* lebih banyak padding kiri */
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #f8f9fa;
+    box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.13); /* shadow bawah lebih tebal */
+    outline: none;
+}
+
+.form-control[type="search"]:focus {
+    border-color: #16a085;
+    box-shadow: 0 6px 28px 0 rgba(22, 160, 133, 0.17);
+    background: #fff;
+}
+
+/* Search icon with extra space */
+.d-flex[role="search"]::before {
+    content: '\1F50D'; /* Unicode for magnifying glass */
+    position: absolute;
+    left: 1.3rem;      /* lebih ke kiri */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.35rem;
+    color: #b0b0b0;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+
+/* --- 2. STYLE UNTUK HALAMAN LOGIN & REGISTER --- */
+
+/* Kontainer khusus untuk halaman login & register yang memiliki gambar latar */
+.login-register-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1492944548511-6238b6320597?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Kartu form untuk login dan register */
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    border: none;
+    border-radius: 1rem; /* Sedikit lebih bulat */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px); /* Efek blur kaca */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Style umum untuk form di halaman login/register */
+.form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.theme-link {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+.theme-link:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+
+/* --- 3. STYLE UNTUK HALAMAN DASHBOARD --- */
+
+/* Memberi warna latar yang bersih khusus untuk body dashboard */
+.body-dashboard {
+    background-color: var(--light-gray);
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.navbar-dark .nav-link.active,
+.navbar-dark .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.375rem;
+}
+
+.dropdown-item:active {
+    background-color: var(--primary-green);
+    color: white !important;
+}
+
+/* Kartu Kategori di Dashboard */
+.category-card {
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    color: var(--dark-green) !important;
+}
+
+/* Kartu Produk di Dashboard */
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e9ecef;
+    border-radius: 0.75rem; /* Lebih rounded */
+    overflow: hidden; /* Memastikan badge tetap di dalam card */
+    background-color: #fff;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-title {
+    color: #343a40;
+    font-weight: 600;
+}
+
+/* Efek munculkan footer pada kartu produk saat di-hover */
+.product-card .card-footer {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: #fff;
+}
+
+.product-card:hover .card-footer {
+    opacity: 1;
+}
+
+/* --- 5. STYLE UNTUK HALAMAN KERANJANG --- */
+
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.cart-item .quantity-input {
+    max-width: 75px;
+    text-align: center;
+}
+
+/* --- 6. STYLE UNTUK HALAMAN PEMBAYARAN --- */
+/* ... (style accordion tetap sama) ... */
+.accordion-button:not(.collapsed){color:#fff;background-color:var(--primary-green)}.accordion-button:not(.collapsed)::after{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")}
+
+/* PERBAIKAN UNTUK KARTU METODE PEMBAYARAN */
+.payment-option-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    height: 100%;
+}
+
+.payment-option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.payment-option-card.selected {
+    border-color: var(--primary-green);
+    border-width: 2px;
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.15);
+}
+
+/* Sembunyikan radio button asli */
+.payment-option-card input[type="radio"] {
+    display: none;
+}
+
+/* Atur tata letak label (yang sekarang menjadi kartu utama) */
+.payment-option-card label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Atur ukuran logo agar seragam */
+.payment-option-card img {
+    max-height: 25px;
+    height: 25px;
+    width: auto;
+    object-fit: contain;
+    min-height: 25px; /* Pastikan ada ruang kosong jika logo lebih kecil */
+}
+
+/* Atur teks nama pembayaran */
+.payment-option-card span {
+    color: #343a40;
+}
+
+/* --- 7. STYLE UNTUK HALAMAN PESANAN SAYA --- */
+
+.nav-pills .nav-link {
+    color: #495057;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: var(--primary-green);
+    color: #fff;
+}
+
+.order-card .card-header {
+    background-color: #f8f9fa;
+}
+
+.order-card .card-footer {
+    background-color: #fafafa;
+}
+
+.order-card .card-footer img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* --- 8. STYLE UNTUK HALAMAN AKUN SAYA --- */
+.list-group-item.active {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
